@@ -5,7 +5,7 @@ The team's communication protocol is through Slack, where we have a specific gro
 
 The roles were distributed as follows:
 - Square role: Mónica Alvarez
-- Triangle role: Cristina Gonzalez
-- Circle role: Daniel Sañudo 
+- Triangle role: Daniel Sañudo
+- Circle role: Cristina Gonzalez 
 
 Although everyone is in charge of a specific role, we all participate actively in the execution of each of the parts and sections that make up the project. 
