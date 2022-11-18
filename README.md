@@ -10,4 +10,13 @@ The ENDIREH is the main reference on the situation of violence experienced by wo
 
 The Survey is conducted every five years and is representative at the national and federative levels. Geographic coverage was divided into four categories: national, national urban, national rural and state. The sample size was 140,784 dwellings at the national level, with 4,371 and 4,426 dwellings as the minimum and maximum, respectively, per state. The sampling scheme was probabilistic, three-stage, stratified and clustered. And the survey period was from October 4 to November 30, 2021.  
 
+From the survey questions and answers, 28 tables were created, in which the information collected is distributed. For this specific project we will work with the TVIV, TSDEM, TB_SEC_III, TB_SEC_IV and TB_SEC_X tables. 
+
+Each of the tables contains the following information: 
+-**TVIV**: contains the basic characteristics of the dwellings (services and goods available) as well as the number of persons usually residing there. 
+-**TSDem**: contains the socio-demographic, economic and cultural characteristics of each of the persons residing in the dwelling. 
+-**TB_SEC_III**: contains the information that identifies the women who are 15 years old and older who reside in the dwelling, and verifies the marital status of the respondent.
+-**TB_SEC_IV**: contains basic information about the partner, husband, boyfriend or ex-partner of women who do not reside in the selected woman's household. It also provides information on the earned income of the woman and her partner, as well as other sources of income available to the woman. It delves into the assets and property owned by the persons residing in the dwelling, specifically the woman selected for the survey.
+-**TB_SEC_X**: contains information on obstetric care received by women aged 15-49 who had a pregnancy during the last five years. 
+
 From the process of selection and cleaning of the ENDIREH database, as well as the implementation of a machine learning model, we seek to answer the following question: is there a relationship between obstetric violence and the place where women go for care during pregnancy (private clinics or social security)?
