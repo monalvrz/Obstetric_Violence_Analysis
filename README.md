@@ -13,10 +13,15 @@ The Survey is conducted every five years and is representative at the national a
 From the survey questions and answers, 28 tables were created, in which the information collected is distributed. For this specific project we will work with the TVIV, TSDEM, TB_SEC_III, TB_SEC_IV and TB_SEC_X tables. 
 
 Each of the tables contains the following information: 
+
 -**TVIV**: contains the basic characteristics of the dwellings (services and goods available) as well as the number of persons usually residing there. 
+
 -**TSDem**: contains the socio-demographic, economic and cultural characteristics of each of the persons residing in the dwelling. 
+
 -**TB_SEC_III**: contains the information that identifies the women who are 15 years old and older who reside in the dwelling, and verifies the marital status of the respondent.
+
 -**TB_SEC_IV**: contains basic information about the partner, husband, boyfriend or ex-partner of women who do not reside in the selected woman's household. It also provides information on the earned income of the woman and her partner, as well as other sources of income available to the woman. It delves into the assets and property owned by the persons residing in the dwelling, specifically the woman selected for the survey.
+
 -**TB_SEC_X**: contains information on obstetric care received by women aged 15-49 who had a pregnancy during the last five years. 
 
 From the process of selection and cleaning of the ENDIREH database, as well as the implementation of a machine learning model, we seek to answer the following question: is there a relationship between obstetric violence and the place where women go for care during pregnancy (private clinics or social security)?
