@@ -26,7 +26,7 @@ Each of the tables contains the following information:
 
 From the process of selection and cleaning of the ENDIREH database, as well as the implementation of a machine learning model, we seek to answer the following question: is there a relationship between obstetric violence and the place where women go for care during pregnancy (private clinics or social security)?
 
-## Comunnication protocols
+## Communication protocols
 The team's communication protocol is through Slack, where we have a specific group where we answer and resolve issues related to the project. In case of any emergency or urgent matter we have the phone numbers of each team member to respond as soon as possible. The group meets in the afternoons to advance and discuss the execution of the project.
 
 The roles were distributed as follows:
