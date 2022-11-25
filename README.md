@@ -24,7 +24,52 @@ Each of the tables contains the following information:
 
 -**TB_SEC_X**: contains information on obstetric care received by women aged 15-49 who had a pregnancy during the last five years. 
 
-From the process of selection and cleaning of the ENDIREH database, as well as the implementation of a machine learning model, we seek to answer the following question: is there a relationship between obstetric violence and the place where women go for care during pregnancy (private clinics or social security)?
+From the process of selection and cleaning of the ENDIREH database, as well as the implementation of a machine learning model, we seek to answer the following questions: 
+
+- What variables influence women to suffer obstetric violence?
+- Women with partners are more likely to experience aggression from medical personnel?
+- Is the region they live related to being exposed to obstetric violence?
+- Is the socioeconomic level related to women who suffer obstetric violence?
+
+## Exploratory Analysis
+
+For the exploratory analysis we used pandas to read the table we created by joining de five tables we chose and that conform the obstetric violence table. 
+
+~~~~
+# Read the obstetric_violence table and show the results
+df = pd.read_sql_table('obstetric_violence', con=engine)
+df
+~~~~
+
+<img width="1008" alt="obstetric-table" src="https://user-images.githubusercontent.com/107893200/203886545-0105a0ba-ed1f-420d-9bb4-1ff9de9b5d19.png">
+
+
+
+
+## Machine Learning
+The first thing we did to start with the selection of the most optimal machine learning model for the project was to decide which columns were or were not useful to find a relationship between obstetric violence and variables such as marital status, age, socioeconomic status. 
+
+Therefore, we decided to discard the following columns: 
+- 'ID_VIV', 'ID_PER' ,'UPM', 'VIV_SEL', 'HOGAR', 'N_REN', were discarded because their use is as an identifier of the respondent.
+- 'N_REN' and 'REN_MUJ_EL', were discarded because they are used to reference a line item within the survey that is about another person.
+- 'CVE_ENT', 'CVE_MUN', were discarded because we chose to preserve the name of the state and having the CVE of municipalities and states would be redundant.
+- 'COD_RES', was discarded because the only value recorded in this column is 1.
+- 'EST_DIS' and 'UPM_DIS', were discarded because they are variables referring to the sampling technique used.
+- 'ESTRATO', was discarded because there is no clear information on what it means.
+- 'NOMBRE', was discarded for two reasons, the person's name is not relevant to the model and no names were recorded for the respondents.
+- 'SEXO', was discarded because it has only 1 value as a response.
+- 'COD_M15', was discarded because it is used as an identifier for the respondents.
+- 'CODIGO', was discarded because it is used as an identifier for the respondents.
+- REN_INF_AD' and 'N_REN_ESP' were discarded because, like 'N_REN' and 'REN_MUJ', they are used to reference other data within the tables.
+- T_INSTRUM' was discarded because it contains the same information as question P3_8.
+- FAC_VIV' and 'FAC_MUJ' were discarded because they are weights calculated with the questions already being analyzed in the model.
+- PAREN' was dropped because it is used to check the respondent's relationship with the head of household.
+- GRA' was discarded because the VIN column contains redundant information about the degree of education of the person.
+- NOM_MUN' was discarded because we chose to work with the states of the country instead of the municipality to avoid over-specifying the analysis.
+
+
+
+
 
 ## Communication protocols
 The team's communication protocol is through Slack, where we have a specific group where we answer and resolve issues related to the project. In case of any emergency or urgent matter we have the phone numbers of each team member to respond as soon as possible. The group meets in the afternoons to advance and discuss the execution of the project.
