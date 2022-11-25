@@ -43,8 +43,44 @@ df
 
 <img width="1008" alt="obstetric-table" src="https://user-images.githubusercontent.com/107893200/203886545-0105a0ba-ed1f-420d-9bb4-1ff9de9b5d19.png">
 
+We then create the EDA dataframe that contains an overview of the information contained in the obstetric violence table.
 
+~~~~
+EDA_df = pd.DataFrame({
+    'Dtype' : df.dtypes,
+    'Number of Unique Values' : df.nunique(),
+    'Number of Non-Empty Entries' : df.count(),
+    'Number of Empty Entries' : df.isnull().sum(),
+    'List of Values' : [df[col].value_counts().index.tolist() for col in df.columns],
+})
+~~~~
 
+<img width="733" alt="EDA-df" src="https://user-images.githubusercontent.com/107893200/203888189-fac05c91-e627-44b1-ba60-5805df466ffb.png">
+
+We filtered the information to select only those women who answered that they had had a pregnancy in the last 5 years. Therefore, we made sure that women who answered no did not answer the questions related to obstetric care. 
+
+~~~~
+pregnancy_not_in_last_5_years = df.loc[(df['P10_2'] == 2.0)]
+
+target = ['P10_8_1',
+'P10_8_2',
+'P10_8_3',
+'P10_8_4',
+'P10_8_5',
+'P10_8_6',
+'P10_8_7',
+'P10_8_8',
+'P10_8_9',
+'P10_8_10',
+'P10_8_11',
+'P10_8_12',
+'P10_8_13',
+'P10_8_14',
+'P10_8_15']
+
+for col in target:
+    print(pregnancy_not_in_last_5_years[col].value_counts())
+~~~~
 
 ## Machine Learning
 The first thing we did to start with the selection of the most optimal machine learning model for the project was to decide which columns were or were not useful to find a relationship between obstetric violence and variables such as marital status, age, socioeconomic status. 
