@@ -103,8 +103,75 @@ Therefore, we decided to discard the following columns:
 - GRA' was discarded because the VIN column contains redundant information about the degree of education of the person.
 - NOM_MUN' was discarded because we chose to work with the states of the country instead of the municipality to avoid over-specifying the analysis.
 
+First we reviewed the columns that had high values compared to the rest of the questions whose values varied between 0 and 100, and we found that the questions related to income reached a value of 999999. This value was used for people who did not answer the question, so these columns were filled in with 0 if they did not have a value, or if their value was 999999. After working with this data, the data type was changed to integer for these columns. 
 
+The amount of features with string values such as the NOM_ENT (state name), NOM_MUN (city name), DOMINIO (domain), P3_8 (marital status) and P4_4 (current employment) is significantly less than those with numeric values, hence a list was created with these column names in order to filter them out when working with the numeric type data columns since the table had object and float dtypes for features that had integer data. These integer dtype features were preprocessed by fillling the NaNs with 0s, and changing their dtype to int. Afterwards, using the list of string value columns that was created previously, their NaNs were filled with 'b' since its the standard option for blank answers according tot he ENDIREH methodology.
 
+After the NaNs were filled with the appropriate values, and the column dtypes were fixed. The next step was to bucket the P4_4 answers depending on their frequency, since around 90% of these answers only appeared once. The bucket threshold was picked to be 5, therefore the answers that appeared 4 or less times in the dataset were bucketed along the blank answers into the 'Other' group. This significantly reduced the dataset size from above 10,000 colums to 500.
+
+After the bucket was created, the next step was to encode the categorical data. All columns whose dtype equaled object were encoded so that our classifier model could use this information.
+
+Finally, in order to assess the different targets we have for this dataset, a nested dictionary was created; the outermost key belongs to the name of the target question, while its values correspond to the X dataset and the y target column. The X dataset was created by removing all target questions (all questions whose name starts with P10_8)  while the y values are those for the target column, The 0 values were removed from each X and y dataset using the target question as the guideline.
+
+~~~~
+def DataFrame_X_y_split(df,targets, df_X_y_dict = {}):
+    # Format the Income related columns since 999999 is used to declare a non-specified income and thus can be used as 0
+    income_columns = ['P4_2', 'P4_5_AB', 'P4_7_AB', 'P4_9_1', 'P4_9_2', 'P4_9_3', 'P4_9_4', 'P4_9_5', 'P4_9_6', 'P4_9_7']
+    df[income_columns] = df[income_columns].fillna(0)
+    df[income_columns].apply(lambda x: x.astype(int))    
+    df[(df[income_columns] == 999999)][income_columns] = 0
+    # Declare which features use text as their value (categorical features)
+    string_columns = ['NOM_ENT','NOM_MUN', 'DOMINIO', 'P3_8','P4_4']
+    # Change the remaining columns to integer datatype
+    df.loc[:,~df.columns.isin(string_columns)] = df.loc[:,~df.columns.isin(string_columns)].fillna(0)
+    df.loc[:,~df.columns.isin(string_columns)] = df.loc[:,~df.columns.isin(string_columns)].astype(int)
+    # Fill the remaining columns with b to represent they were left as blank
+    df.fillna('b',inplace=True)
+    # Create list of categorical columns
+    categorical_features = df.dtypes[df.dtypes == 'object'].index.tolist()
+    # Remove the target question from the list of categorical columns
+    for target in targets:
+        if target in categorical_features:
+            categorical_features.remove(target)
+    print(f'List of categorical features: {categorical_features}')
+    print(f'Number of unique entries in P4_4: {df["P4_4"].nunique()}')
+    # Set the categorical features dtype as string
+    df[categorical_features].apply(lambda x: x.astype(str))
+    # Enconde the categorical features
+    encode_df = pd.get_dummies(df, columns=categorical_features)
+    # Create the dataset for each question
+    for target in targets:
+        # Drop the rows where the target answers are blank
+        df_X = encode_df.loc[encode_df[target] != 0].drop(columns=targets)
+        df_y = encode_df.loc[encode_df[target] != 0,[target]]
+        # Create nested dictionary for the target question
+        df_X_y_dict[target] = {}
+        # Store the X and y datasets that will be used with the random forest model for the key question
+        df_X_y_dict[target]['X'] = df_X
+        df_X_y_dict[target]['y'] = df_y
+    return df_X_y_dict
+~~~~
+
+A scaler was used in the X and y datasets to account for the difference in values between most answers and the income related answers.
+
+The data was separated into train test using the train_test_split function of sklearn, the size was 75% for training and 25% for test. As these data are not balanced, we chose to use stratify in the y variable.
+
+~~~~
+[[ 176  171]
+ [2563 1921]]
+~~~~
+
+We chose the Random Forest model of machine learning considering the following advantages and disadvantages: 
+Advantages:
+- It lessens decision tree overfitting and increases accuracy.
+- It is adaptable to problems involving classification and regression.
+- Both categorical and continuous values can be used with it.
+- It automates filling in data's missing values.
+- Data normalization is not necessary because a rule-based methodology is used.
+Disadvantages:
+- As it creates several trees to integrate their outputs, it uses a lot of resources and computational power.
+- As it integrates numerous decision trees to decide the class, training takes a lot of time.
+- It also suffers from interpretability issues and is unable to establish the relative importance of each variable because of the ensemble of decision trees.
 
 
 ## Communication protocols
