@@ -162,13 +162,17 @@ The data was separated into train test using the train_test_split function of sk
 ~~~~
 
 We chose the Random Forest model of machine learning considering the following advantages and disadvantages: 
+
 Advantages:
+
 - It lessens decision tree overfitting and increases accuracy.
 - It is adaptable to problems involving classification and regression.
 - Both categorical and continuous values can be used with it.
 - It automates filling in data's missing values.
 - Data normalization is not necessary because a rule-based methodology is used.
+
 Disadvantages:
+
 - As it creates several trees to integrate their outputs, it uses a lot of resources and computational power.
 - As it integrates numerous decision trees to decide the class, training takes a lot of time.
 - It also suffers from interpretability issues and is unable to establish the relative importance of each variable because of the ensemble of decision trees.
