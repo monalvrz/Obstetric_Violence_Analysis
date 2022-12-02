@@ -4,7 +4,7 @@
 
 For the final project we decided to address gender violence, specifically obstetric violence, i.e. any type of violence, both verbal and physical, that women experience during pregnancy. 
 
-If you want to access the presentation of the final project you can review it [here](https://docs.google.com/presentation/d/1sfBlwcYBB2vFvdKs-UlIpPIlsR133COi-_0Lt6nKOMo/edit#slide=id.g1a888aca8e2_2_55)
+If you want to access the presentation of the final project you can review it [here](https://docs.google.com/presentation/d/1sfBlwcYBB2vFvdKs-UlIpPIlsR133COi-_0Lt6nKOMo/edit#slide=id.g1a888aca8e2_2_55).
 
 ### Why we selected this topic?
 
@@ -184,3 +184,7 @@ Disadvantages:
 - As it creates several trees to integrate their outputs, it uses a lot of resources and computational power.
 - As it integrates numerous decision trees to decide the class, training takes a lot of time.
 - It also suffers from interpretability issues and is unable to establish the relative importance of each variable because of the ensemble of decision trees.
+
+## Dashboard 
+
+If you want to access the dashboard of the final project you can review it [here](https://public.tableau.com/app/profile/cristina.gonzalez.zorrilla/viz/FinalProjectObstetricViolence/Dashboard1?publish=yes).
