@@ -188,3 +188,15 @@ Disadvantages:
 ## Dashboard 
 
 If you want to access the dashboard of the final project you can review it [here](https://public.tableau.com/app/profile/cristina.gonzalez.zorrilla/viz/FinalProjectObstetricViolence/Dashboard1?publish=yes).
+
+<img width="1289" alt="questions-table" src="https://user-images.githubusercontent.com/107893200/205209526-026dd818-38be-400f-9937-a2356897956a.png">
+
+<img width="1026" alt="table-2 1" src="https://user-images.githubusercontent.com/107893200/205209559-19aa79ad-2f7d-4bb7-904c-85dfaa3643ae.png">
+
+<img width="993" alt="table-2 2" src="https://user-images.githubusercontent.com/107893200/205209569-758df032-8fe4-4639-961b-38c1ae1bb62c.png">
+
+<img width="993" alt="table-2 3" src="https://user-images.githubusercontent.com/107893200/205209585-da44b781-2f2e-46e9-a9de-1dcbc8963ef6.png">
+
+<img width="545" alt="table-2 4" src="https://user-images.githubusercontent.com/107893200/205209589-0ccf2ad0-c381-4c8e-8d06-f2a63e5c4ce5.png">
+
+
