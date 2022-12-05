@@ -111,17 +111,34 @@ The accuracy of the model oscilates between 69% for question P10_8_2 to 94% in q
 > For more information of the Machine Learning part of the project such as description od data preprocessing, description of feature selection, description of feature engineering, train test split, and model training you can redirect [here](https://github.com/monalvrz/Final_Project/tree/main/machine_learning).
 
 
-## Dashboard 
+## Dashboard :bar_chart:
 
 If you want to access the dashboard of the final project you can review it [here](https://public.tableau.com/app/profile/cristina.gonzalez.zorrilla/viz/FinalProjectObstetricViolence/Dashboard1?publish=yes).
 
+
+https://user-images.githubusercontent.com/107893200/205732118-9e844415-d2ae-4114-9f89-b23daf1428f4.mov
+
+### Tables
+
+In addition to the dashboard graphs, we created five tables showing some of the percentages related to the women who answered the questions about obstetric care.
+
+#### Table 1.1
+
 <img width="1289" alt="questions-table" src="https://user-images.githubusercontent.com/107893200/205209526-026dd818-38be-400f-9937-a2356897956a.png">
+
+#### Table 2.1
 
 <img width="1026" alt="table-2 1" src="https://user-images.githubusercontent.com/107893200/205209559-19aa79ad-2f7d-4bb7-904c-85dfaa3643ae.png">
 
+#### Table 2.2
+
 <img width="993" alt="table-2 2" src="https://user-images.githubusercontent.com/107893200/205209569-758df032-8fe4-4639-961b-38c1ae1bb62c.png">
 
+#### Table 2.3
+
 <img width="993" alt="table-2 3" src="https://user-images.githubusercontent.com/107893200/205209585-da44b781-2f2e-46e9-a9de-1dcbc8963ef6.png">
+
+#### Table 2.4
 
 <img width="545" alt="table-2 4" src="https://user-images.githubusercontent.com/107893200/205209589-0ccf2ad0-c381-4c8e-8d06-f2a63e5c4ce5.png">
 
