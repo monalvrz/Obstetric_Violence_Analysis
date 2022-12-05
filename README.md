@@ -1,14 +1,14 @@
-# Final_Project
+# Analysis of ENDIREH Report on Obstetric Violence
 
 ## Presentation
 
-For the final project we decided to address gender violence, specifically obstetric violence, i.e. any type of violence, both verbal and physical, that women experience during pregnancy. 
+For the final project we decided to address gender violence, specifically **obstetric violence**, i.e. any type of violence, both verbal and physical, that women experience during pregnancy. 
 
 If you want to access the presentation of the final project you can review it [here](https://docs.google.com/presentation/d/1sfBlwcYBB2vFvdKs-UlIpPIlsR133COi-_0Lt6nKOMo/edit#slide=id.g1a888aca8e2_2_55).
 
-### Why we selected this topic?
+### Why we selected this topic? :thought_balloon:
 
-Our interest arose at the same time due to the information gathered by the ENDIREH (National Survey on the Dynamics of Household Relationships), conducted by INEGI (National Institute of Statistics and Geography) during 2021. As in the past edition of the survey (2016), the database included a group of additional questions regarding obstetric violence, which led us to think about the factors that could influence the violence experienced by women during pregnancy. 
+Our interest arose at the same time due to the information gathered by the **ENDIREH** (National Survey on the Dynamics of Household Relationships), conducted by INEGI (National Institute of Statistics and Geography) during **2021**. As in the past edition of the survey (2016), the database included a group of additional questions regarding obstetric care, which led us to think about the factors that could influence the violence experienced by women during pregnancy. 
 
 ### What is ENDIREH?
 
