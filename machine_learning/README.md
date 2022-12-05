@@ -22,6 +22,8 @@ Feature P4_4 contains the profession of the interviewee; therefore, this informa
 
 The target questions from section P10_8 were saved in the y dataframe, while the relevant features were saved in the X dataframe.
 
+Gower was used to create a distance matrix that accounts for both categorical and continous data and then DBSCAN was used using the precomputed distance matrix to create the clusters according to the answers given at each of the sections.
+
 ## Train test split
 
 Using SKlearn train_test_split, the datasets were split by leaving 75% of the entries in the training dataset, and 25% for testing. The y dataset was stratified since the dataset is imbalanced.
@@ -30,7 +32,7 @@ Using SKlearn train_test_split, the datasets were split by leaving 75% of the en
 
 The original choice for this task was a random forest classifier since it could output the feature importance of the dataset, however its performance for the minority class was not up to task. After further testing various models, the best performance came from the Imbalanced Learn EasyEnsembleClassifier and a Deep Neural Network. 
 
-The neural network outputted the better results in regards of time of execution and has greater room for improvement.
+The neural network outputted the better results in regards of time of execution and has greater room for improvement. 
 
 ## Model training
 Each of the target questions has its own X and y dataset. This is because the interviewees who answered one of the target questions may not have answered the following, thus the blank answers from each target question are removed from both X and y dataset. Negative answers were not removed since these are also relevant for the model.
@@ -43,7 +45,7 @@ Another option is adjusting the binary classification threshold using the ROC cu
 
 ### Accuracy score
 
-Currently, the neural network has an accuracy score of 71% which is still in need of improvement.
+The accuracy of the model oscilates between 69% for question P10_8_2 to 94% in question P10_8_10
 
 
 
