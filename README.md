@@ -113,7 +113,7 @@ The accuracy of the model oscilates between 69% for question P10_8_2 to 94% in q
 
 ## Dashboard :bar_chart:
 
-If you want to access the dashboard of the final project you can review it [here](https://public.tableau.com/app/profile/cristina.gonzalez.zorrilla/viz/FinalProjectObstetricViolence/Dashboard1?publish=yes).
+If you want to access the dashboard of the final project you can review it [here](https://public.tableau.com/app/profile/cristina.gonzalez.zorrilla/viz/FinalProjectObstetricViolence/Story1?publish=yes).
 
 
 https://user-images.githubusercontent.com/107893200/205732118-9e844415-d2ae-4114-9f89-b23daf1428f4.mov
