@@ -1,0 +1,1 @@
+FLASK_APP=deployment/app.py flask run
