@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Obstetric Violence</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="container">
+    <div class="jumbotron">
+        <h1>Prediction results for {{user_inputs["Target_Question"]}}: {{NN_result}}</h1>
+    </div>
+    <div class="col-md-12">
+        <h1>These are the inputs you gave:</h1>
+        <ul>
+            <li>NOM_ENT: {{user_inputs["NOM_ENT"]}}</li>
+            <li>DOMINIO: {{user_inputs["DOMINIO"]}}</li>
+            <li>EDAD: {{user_inputs["EDAD"]}}</li>
+            <li>NIV: {{user_inputs["NIV"]}}</li>
+            <li>P1_1: {{user_inputs["P1_1"]}}</li>
+            <li>P1_2: {{user_inputs["P1_2"]}}</li>
+            <li>P1_2_A: {{user_inputs["P1_2_A"]}}</li>
+            <li>P1_3: {{user_inputs["P1_3"]}}</li>
+            <li>P1_4_1: {{user_inputs["P1_4_1"]}}</li>
+            <li>P1_4_2: {{user_inputs["P1_4_2"]}}</li>
+            <li>P1_4_3: {{user_inputs["P1_4_3"]}}</li>
+            <li>P1_4_4: {{user_inputs["P1_4_4"]}}</li>
+            <li>P1_4_5: {{user_inputs["P1_4_5"]}}</li>
+            <li>P1_4_6: {{user_inputs["P1_4_6"]}}</li>
+            <li>P1_4_7: {{user_inputs["P1_4_7"]}}</li>
+            <li>P1_4_8: {{user_inputs["P1_4_8"]}}</li>
+            <li>P1_4_9: {{user_inputs["P1_4_9"]}}</li>
+            <li>P1_5: {{user_inputs["P1_5"]}}</li>
+            <li>P1_6: {{user_inputs["P1_6"]}}</li>
+            <li>P1_7: {{user_inputs["P1_7"]}}</li>
+            <li>P1_8: {{user_inputs["P1_8"]}}</li>
+            <li>P1_9: {{user_inputs["P1_9"]}}</li>
+            <li>P1_10_1: {{user_inputs["P1_10_1"]}}</li>
+            <li>P1_10_2: {{user_inputs["P1_10_2"]}}</li>
+            <li>P1_10_3: {{user_inputs["P1_10_3"]}}</li>
+            <li>P1_10_4: {{user_inputs["P1_10_4"]}}</li>
+            <li>P2_5: {{user_inputs["P2_5"]}}</li>
+            <li>P2_6: {{user_inputs["P2_6"]}}</li>
+            <li>P2_8: {{user_inputs["P2_8"]}}</li>
+            <li>P2_9: {{user_inputs["P2_9"]}}</li>
+            <li>P2_10: {{user_inputs["P2_10"]}}</li>
+            <li>P2_11: {{user_inputs["P2_11"]}}</li>
+            <li>P2_12: {{user_inputs["P2_12"]}}</li>
+            <li>P2_13: {{user_inputs["P2_13"]}}</li>
+            <li>P2_14: {{user_inputs["P2_14"]}}</li>
+            <li>P2_15: {{user_inputs["P2_15"]}}</li>
+            <li>P2_16: {{user_inputs["P2_16"]}}</li>
+            <li>P3_1: {{user_inputs["P3_1"]}}</li>
+            <li>P3_2: {{user_inputs["P3_2"]}}</li>
+            <li>P3_3: {{user_inputs["P3_3"]}}</li>
+            <li>P3_4: {{user_inputs["P3_4"]}}</li>
+            <li>P3_5: {{user_inputs["P3_5"]}}</li>
+            <li>P3_6: {{user_inputs["P3_6"]}}</li>
+            <li>P3_7: {{user_inputs["P3_7"]}}</li>
+            <li>P3_8: {{user_inputs["P3_8"]}}</li>
+            <li>P4AB_1: {{user_inputs["P4AB_1"]}}</li>
+            <li>P4AB_2: {{user_inputs["P4AB_2"]}}</li>
+            <li>P4A_1: {{user_inputs["P4A_1"]}}</li>
+            <li>P4A_2: {{user_inputs["P4A_2"]}}</li>
+            <li>P4B_1: {{user_inputs["P4B_1"]}}</li>
+            <li>P4B_2: {{user_inputs["P4B_2"]}}</li>
+            <li>P4BC_1: {{user_inputs["P4BC_1"]}}</li>
+            <li>P4BC_2: {{user_inputs["P4BC_2"]}}</li>
+            <li>P4C_1: {{user_inputs["P4C_1"]}}</li>
+            <li>P4BC_3: {{user_inputs["P4BC_3"]}}</li>
+            <li>P4BC_4: {{user_inputs["P4BC_4"]}}</li>
+            <li>P4BC_5: {{user_inputs["P4BC_5"]}}</li>
+            <li>P4_1: {{user_inputs["P4_1"]}}</li>
+            <li>P4_2: {{user_inputs["P4_2"]}}</li>
+            <li>P4_2_1: {{user_inputs["P4_2_1"]}}</li>
+            <li>P4_3: {{user_inputs["P4_3"]}}</li>
+            <li>P4_4: {{user_inputs["P4_4"]}}</li>
+            <li>P4_5_AB: {{user_inputs["P4_5_AB"]}}</li>
+            <li>P4_5_1_AB: {{user_inputs["P4_5_1_AB"]}}</li>
+            <li>P4_6_AB: {{user_inputs["P4_6_AB"]}}</li>
+            <li>P4_7_AB: {{user_inputs["P4_7_AB"]}}</li>
+            <li>P4_8_1: {{user_inputs["P4_8_1"]}}</li>
+            <li>P4_8_2: {{user_inputs["P4_8_2"]}}</li>
+            <li>P4_8_3: {{user_inputs["P4_8_3"]}}</li>
+            <li>P4_8_4: {{user_inputs["P4_8_4"]}}</li>
+            <li>P4_8_5: {{user_inputs["P4_8_5"]}}</li>
+            <li>P4_8_6: {{user_inputs["P4_8_6"]}}</li>
+            <li>P4_8_7: {{user_inputs["P4_8_7"]}}</li>
+            <li>P4_9_1: {{user_inputs["P4_9_1"]}}</li>
+            <li>P4_9_2: {{user_inputs["P4_9_2"]}}</li>
+            <li>P4_10_2_1: {{user_inputs["P4_10_2_1"]}}</li>
+            <li>P4_10_2_2: {{user_inputs["P4_10_2_2"]}}</li>
+            <li>P4_10_2_3: {{user_inputs["P4_10_2_3"]}}</li>
+            <li>P4_9_3: {{user_inputs["P4_9_3"]}}</li>
+            <li>P4_10_3_1: {{user_inputs["P4_10_3_1"]}}</li>
+            <li>P4_10_3_2: {{user_inputs["P4_10_3_2"]}}</li>
+            <li>P4_10_3_3: {{user_inputs["P4_10_3_3"]}}</li>
+            <li>P4_9_4: {{user_inputs["P4_9_4"]}}</li>
+            <li>P4_9_5: {{user_inputs["P4_9_5"]}}</li>
+            <li>P4_9_6: {{user_inputs["P4_9_6"]}}</li>
+            <li>P4_9_7: {{user_inputs["P4_9_7"]}}</li>
+            <li>P4_11: {{user_inputs["P4_11"]}}</li>
+            <li>P4_12_1: {{user_inputs["P4_12_1"]}}</li>
+            <li>P4_12_2: {{user_inputs["P4_12_2"]}}</li>
+            <li>P4_12_3: {{user_inputs["P4_12_3"]}}</li>
+            <li>P4_12_4: {{user_inputs["P4_12_4"]}}</li>
+            <li>P4_12_5: {{user_inputs["P4_12_5"]}}</li>
+            <li>P4_12_6: {{user_inputs["P4_12_6"]}}</li>
+            <li>P4_12_7: {{user_inputs["P4_12_7"]}}</li>
+            <li>P4_13_1: {{user_inputs["P4_13_1"]}}</li>
+            <li>P4_13_2: {{user_inputs["P4_13_2"]}}</li>
+            <li>P4_13_3: {{user_inputs["P4_13_3"]}}</li>
+            <li>P4_13_4: {{user_inputs["P4_13_4"]}}</li>
+            <li>P4_13_5: {{user_inputs["P4_13_5"]}}</li>
+            <li>P4_13_6: {{user_inputs["P4_13_6"]}}</li>
+            <li>P4_13_7: {{user_inputs["P4_13_7"]}}</li>
+            <li>P10_1_1: {{user_inputs["P10_1_1"]}}</li>
+            <li>P10_1_2: {{user_inputs["P10_1_2"]}}</li>
+            <li>P10_1_3: {{user_inputs["P10_1_3"]}}</li>
+            <li>P10_1_4: {{user_inputs["P10_1_4"]}}</li>
+            <li>P10_1_5: {{user_inputs["P10_1_5"]}}</li>
+            <li>P10_1_6: {{user_inputs["P10_1_6"]}}</li>
+            <li>P10_1_7: {{user_inputs["P10_1_7"]}}</li>
+            <li>P10_1_8: {{user_inputs["P10_1_8"]}}</li>
+            <li>P10_1_9: {{user_inputs["P10_1_9"]}}</li>
+            <li>P10_2: {{user_inputs["P10_2"]}}</li>
+            <li>P10_3: {{user_inputs["P10_3"]}}</li>
+            <li>P10_4_1: {{user_inputs["P10_4_1"]}}</li>
+            <li>P10_4_2: {{user_inputs["P10_4_2"]}}</li>
+            <li>P10_4_3: {{user_inputs["P10_4_3"]}}</li>
+            <li>P10_5_01: {{user_inputs["P10_5_01"]}}</li>
+            <li>P10_5_02: {{user_inputs["P10_5_02"]}}</li>
+            <li>P10_5_03: {{user_inputs["P10_5_03"]}}</li>
+            <li>P10_5_04: {{user_inputs["P10_5_04"]}}</li>
+            <li>P10_5_05: {{user_inputs["P10_5_05"]}}</li>
+            <li>P10_5_06: {{user_inputs["P10_5_06"]}}</li>
+            <li>P10_5_07: {{user_inputs["P10_5_07"]}}</li>
+            <li>P10_5_08: {{user_inputs["P10_5_08"]}}</li>
+            <li>P10_5_09: {{user_inputs["P10_5_09"]}}</li>
+            <li>P10_5_10: {{user_inputs["P10_5_10"]}}</li>
+            <li>P10_5_11: {{user_inputs["P10_5_11"]}}</li>
+            <li>P10_6ANIO: {{user_inputs["P10_6ANIO"]}}</li>
+            <li>P10_6MES: {{user_inputs["P10_6MES"]}}</li>
+            <li>P10_7: {{user_inputs["P10_7"]}}</li>
+        </ul>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p class="text-left"><a href="/index">Return to index</a></p>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
