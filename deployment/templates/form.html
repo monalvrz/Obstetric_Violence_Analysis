@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User Entry Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <body>
+        <div class="container">
+            <div class="jumbotron" style="text-align: center">
+                <h1>ENDIREH Survey</h1>
+                <p>Enter your answers according to the ENDIREH guide</p>
+            </div>
+            <div class="row">
+                <div class="col-md-offset-2 col-md-8">
+                    <form method="POST" action="/send" role="form", name="form">
+                        <div class="form-group">
+                            <label for="inputNOM_ENT">NOM_ENT</label>
+                            <input type="text" class="form-control" id="inputNOM_ENT" name="NOM_ENT" placeholder="NOM_ENT" value="CHIAPAS">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputDOMINIO">DOMINIO</label>
+                            <input type="text" class="form-control" id="inputDOMINIO" name="DOMINIO" placeholder="DOMINIO" value="U">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEDAD">EDAD</label>
+                            <input type="text" class="form-control" id="inputEDAD" name="EDAD" placeholder="EDAD" value="30">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputNIV">NIV</label>
+                            <input type="text" class="form-control" id="inputNIV" name="NIV" placeholder="NIV" value="3.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP1_1">P1_1</label>
+                            <input type="text" class="form-control" id="inputP1_1" name="P1_1" placeholder="P1_1" value="2">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP1_2">P1_2</label>
+                            <input type="text" class="form-control" id="inputP1_2" name="P1_2" placeholder="P1_2" value="2">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP1_2_A">P1_2_A</label>
+                            <input type="text" class="form-control" id="inputP1_2_A" name="P1_2_A" placeholder="P1_2_A" value="3">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP1_3">P1_3</label>
+                            <input type="text" class="form-control" id="inputP1_3" name="P1_3" placeholder="P1_3" value="5">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP1_4_1">P1_4_1</label>
+                            <input type="text" class="form-control" id="inputP1_4_1" name="P1_4_1" placeholder="P1_4_1" value="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP1_4_2">P1_4_2</label>
+                            <input type="text" class="form-control" id="inputP1_4_2" name="P1_4_2" placeholder="P1_4_2" value="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP1_4_3">P1_4_3</label>
+                            <input type="text" class="form-control" id="inputP1_4_3" name="P1_4_3" placeholder="P1_4_3" value="2">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP1_4_4">P1_4_4</label>
+                            <input type="text" class="form-control" id="inputP1_4_4" name="P1_4_4" placeholder="P1_4_4" value="2">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP1_4_5">P1_4_5</label>
+                            <input type="text" class="form-control" id="inputP1_4_5" name="P1_4_5" placeholder="P1_4_5" value="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP1_4_6">P1_4_6</label>
+                            <input type="text" class="form-control" id="inputP1_4_6" name="P1_4_6" placeholder="P1_4_6" value="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP1_4_7">P1_4_7</label>
+                            <input type="text" class="form-control" id="inputP1_4_7" name="P1_4_7" placeholder="P1_4_7" value="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP1_4_8">P1_4_8</label>
+                            <input type="text" class="form-control" id="inputP1_4_8" name="P1_4_8" placeholder="P1_4_8" value="2">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP1_4_9">P1_4_9</label>
+                            <input type="text" class="form-control" id="inputP1_4_9" name="P1_4_9" placeholder="P1_4_9" value="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP1_5">P1_5</label>
+                            <input type="text" class="form-control" id="inputP1_5" name="P1_5" placeholder="P1_5" value="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP1_6">P1_6</label>
+                            <input type="text" class="form-control" id="inputP1_6" name="P1_6" placeholder="P1_6" value="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP1_7">P1_7</label>
+                            <input type="text" class="form-control" id="inputP1_7" name="P1_7" placeholder="P1_7" value="4">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP1_8">P1_8</label>
+                            <input type="text" class="form-control" id="inputP1_8" name="P1_8" placeholder="P1_8" value="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP1_9">P1_9</label>
+                            <input type="text" class="form-control" id="inputP1_9" name="P1_9" placeholder="P1_9" value="2.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP1_10_1">P1_10_1</label>
+                            <input type="text" class="form-control" id="inputP1_10_1" name="P1_10_1" placeholder="P1_10_1" value="0.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP1_10_2">P1_10_2</label>
+                            <input type="text" class="form-control" id="inputP1_10_2" name="P1_10_2" placeholder="P1_10_2" value="1.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP1_10_3">P1_10_3</label>
+                            <input type="text" class="form-control" id="inputP1_10_3" name="P1_10_3" placeholder="P1_10_3" value="0.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP1_10_4">P1_10_4</label>
+                            <input type="text" class="form-control" id="inputP1_10_4" name="P1_10_4" placeholder="P1_10_4" value="0.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP2_5">P2_5</label>
+                            <input type="text" class="form-control" id="inputP2_5" name="P2_5" placeholder="P2_5" value="96">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP2_6">P2_6</label>
+                            <input type="text" class="form-control" id="inputP2_6" name="P2_6" placeholder="P2_6" value="96">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP2_8">P2_8</label>
+                            <input type="text" class="form-control" id="inputP2_8" name="P2_8" placeholder="P2_8" value="1.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP2_9">P2_9</label>
+                            <input type="text" class="form-control" id="inputP2_9" name="P2_9" placeholder="P2_9" value="2.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP2_10">P2_10</label>
+                            <input type="text" class="form-control" id="inputP2_10" name="P2_10" placeholder="P2_10" value="3.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP2_11">P2_11</label>
+                            <input type="text" class="form-control" id="inputP2_11" name="P2_11" placeholder="P2_11" value="2.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP2_12">P2_12</label>
+                            <input type="text" class="form-control" id="inputP2_12" name="P2_12" placeholder="P2_12" value="1.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP2_13">P2_13</label>
+                            <input type="text" class="form-control" id="inputP2_13" name="P2_13" placeholder="P2_13" value="2.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP2_14">P2_14</label>
+                            <input type="text" class="form-control" id="inputP2_14" name="P2_14" placeholder="P2_14" value="10.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP2_15">P2_15</label>
+                            <input type="text" class="form-control" id="inputP2_15" name="P2_15" placeholder="P2_15" value="1.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP2_16">P2_16</label>
+                            <input type="text" class="form-control" id="inputP2_16" name="P2_16" placeholder="P2_16" value="1.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP3_1">P3_1</label>
+                            <input type="text" class="form-control" id="inputP3_1" name="P3_1" placeholder="P3_1" value="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP3_2">P3_2</label>
+                            <input type="text" class="form-control" id="inputP3_2" name="P3_2" placeholder="P3_2" value="1.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP3_3">P3_3</label>
+                            <input type="text" class="form-control" id="inputP3_3" name="P3_3" placeholder="P3_3" value="1.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP3_4">P3_4</label>
+                            <input type="text" class="form-control" id="inputP3_4" name="P3_4" placeholder="P3_4" value="2.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP3_5">P3_5</label>
+                            <input type="text" class="form-control" id="inputP3_5" name="P3_5" placeholder="P3_5" value="2.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP3_6">P3_6</label>
+                            <input type="text" class="form-control" id="inputP3_6" name="P3_6" placeholder="P3_6" value="3.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP3_7">P3_7</label>
+                            <input type="text" class="form-control" id="inputP3_7" name="P3_7" placeholder="P3_7" value="2.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP3_8">P3_8</label>
+                            <input type="text" class="form-control" id="inputP3_8" name="P3_8" placeholder="P3_8" value="A1">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4AB_1">P4AB_1</label>
+                            <input type="text" class="form-control" id="inputP4AB_1" name="P4AB_1" placeholder="P4AB_1" value="1.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4AB_2">P4AB_2</label>
+                            <input type="text" class="form-control" id="inputP4AB_2" name="P4AB_2" placeholder="P4AB_2" value="0.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4A_1">P4A_1</label>
+                            <input type="text" class="form-control" id="inputP4A_1" name="P4A_1" placeholder="P4A_1" value="5.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4A_2">P4A_2</label>
+                            <input type="text" class="form-control" id="inputP4A_2" name="P4A_2" placeholder="P4A_2" value="8.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4B_1">P4B_1</label>
+                            <input type="text" class="form-control" id="inputP4B_1" name="P4B_1" placeholder="P4B_1" value="1.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4B_2">P4B_2</label>
+                            <input type="text" class="form-control" id="inputP4B_2" name="P4B_2" placeholder="P4B_2" value="2.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4BC_1">P4BC_1</label>
+                            <input type="text" class="form-control" id="inputP4BC_1" name="P4BC_1" placeholder="P4BC_1" value="28.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4BC_2">P4BC_2</label>
+                            <input type="text" class="form-control" id="inputP4BC_2" name="P4BC_2" placeholder="P4BC_2" value="3.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4C_1">P4C_1</label>
+                            <input type="text" class="form-control" id="inputP4C_1" name="P4C_1" placeholder="P4C_1" value="2.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4BC_3">P4BC_3</label>
+                            <input type="text" class="form-control" id="inputP4BC_3" name="P4BC_3" placeholder="P4BC_3" value="3.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4BC_4">P4BC_4</label>
+                            <input type="text" class="form-control" id="inputP4BC_4" name="P4BC_4" placeholder="P4BC_4" value="2.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4BC_5">P4BC_5</label>
+                            <input type="text" class="form-control" id="inputP4BC_5" name="P4BC_5" placeholder="P4BC_5" value="1.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_1">P4_1</label>
+                            <input type="text" class="form-control" id="inputP4_1" name="P4_1" placeholder="P4_1" value="2">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_2">P4_2</label>
+                            <input type="text" class="form-control" id="inputP4_2" name="P4_2" placeholder="P4_2" value="1000.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_2_1">P4_2_1</label>
+                            <input type="text" class="form-control" id="inputP4_2_1" name="P4_2_1" placeholder="P4_2_1" value="1.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_3">P4_3</label>
+                            <input type="text" class="form-control" id="inputP4_3" name="P4_3" placeholder="P4_3" value="1.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_4">P4_4</label>
+                            <input type="text" class="form-control" id="inputP4_4" name="P4_4" placeholder="P4_4" value="ALBAÑIL">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_5_AB">P4_5_AB</label>
+                            <input type="text" class="form-control" id="inputP4_5_AB" name="P4_5_AB" placeholder="P4_5_AB" value="999998.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_5_1_AB">P4_5_1_AB</label>
+                            <input type="text" class="form-control" id="inputP4_5_1_AB" name="P4_5_1_AB" placeholder="P4_5_1_AB" value="1.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_6_AB">P4_6_AB</label>
+                            <input type="text" class="form-control" id="inputP4_6_AB" name="P4_6_AB" placeholder="P4_6_AB" value="1.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_7_AB">P4_7_AB</label>
+                            <input type="text" class="form-control" id="inputP4_7_AB" name="P4_7_AB" placeholder="P4_7_AB" value="4000.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_8_1">P4_8_1</label>
+                            <input type="text" class="form-control" id="inputP4_8_1" name="P4_8_1" placeholder="P4_8_1" value="2">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_8_2">P4_8_2</label>
+                            <input type="text" class="form-control" id="inputP4_8_2" name="P4_8_2" placeholder="P4_8_2" value="2">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_8_3">P4_8_3</label>
+                            <input type="text" class="form-control" id="inputP4_8_3" name="P4_8_3" placeholder="P4_8_3" value="2">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_8_4">P4_8_4</label>
+                            <input type="text" class="form-control" id="inputP4_8_4" name="P4_8_4" placeholder="P4_8_4" value="2">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_8_5">P4_8_5</label>
+                            <input type="text" class="form-control" id="inputP4_8_5" name="P4_8_5" placeholder="P4_8_5" value="2">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_8_6">P4_8_6</label>
+                            <input type="text" class="form-control" id="inputP4_8_6" name="P4_8_6" placeholder="P4_8_6" value="2">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_8_7">P4_8_7</label>
+                            <input type="text" class="form-control" id="inputP4_8_7" name="P4_8_7" placeholder="P4_8_7" value="2">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_9_1">P4_9_1</label>
+                            <input type="text" class="form-control" id="inputP4_9_1" name="P4_9_1" placeholder="P4_9_1" value="2000.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_9_2">P4_9_2</label>
+                            <input type="text" class="form-control" id="inputP4_9_2" name="P4_9_2" placeholder="P4_9_2" value="2000.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_10_2_1">P4_10_2_1</label>
+                            <input type="text" class="form-control" id="inputP4_10_2_1" name="P4_10_2_1" placeholder="P4_10_2_1" value="1.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_10_2_2">P4_10_2_2</label>
+                            <input type="text" class="form-control" id="inputP4_10_2_2" name="P4_10_2_2" placeholder="P4_10_2_2" value="3.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_10_2_3">P4_10_2_3</label>
+                            <input type="text" class="form-control" id="inputP4_10_2_3" name="P4_10_2_3" placeholder="P4_10_2_3" value="4.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_9_3">P4_9_3</label>
+                            <input type="text" class="form-control" id="inputP4_9_3" name="P4_9_3" placeholder="P4_9_3" value="2000.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_10_3_1">P4_10_3_1</label>
+                            <input type="text" class="form-control" id="inputP4_10_3_1" name="P4_10_3_1" placeholder="P4_10_3_1" value="1.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_10_3_2">P4_10_3_2</label>
+                            <input type="text" class="form-control" id="inputP4_10_3_2" name="P4_10_3_2" placeholder="P4_10_3_2" value="4.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_10_3_3">P4_10_3_3</label>
+                            <input type="text" class="form-control" id="inputP4_10_3_3" name="P4_10_3_3" placeholder="P4_10_3_3" value="b">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_9_4">P4_9_4</label>
+                            <input type="text" class="form-control" id="inputP4_9_4" name="P4_9_4" placeholder="P4_9_4" value="800.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_9_5">P4_9_5</label>
+                            <input type="text" class="form-control" id="inputP4_9_5" name="P4_9_5" placeholder="P4_9_5" value="800.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_9_6">P4_9_6</label>
+                            <input type="text" class="form-control" id="inputP4_9_6" name="P4_9_6" placeholder="P4_9_6" value="800.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_9_7">P4_9_7</label>
+                            <input type="text" class="form-control" id="inputP4_9_7" name="P4_9_7" placeholder="P4_9_7" value="2000.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_11">P4_11</label>
+                            <input type="text" class="form-control" id="inputP4_11" name="P4_11" placeholder="P4_11" value="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_12_1">P4_12_1</label>
+                            <input type="text" class="form-control" id="inputP4_12_1" name="P4_12_1" placeholder="P4_12_1" value="2">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_12_2">P4_12_2</label>
+                            <input type="text" class="form-control" id="inputP4_12_2" name="P4_12_2" placeholder="P4_12_2" value="2">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_12_3">P4_12_3</label>
+                            <input type="text" class="form-control" id="inputP4_12_3" name="P4_12_3" placeholder="P4_12_3" value="2">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_12_4">P4_12_4</label>
+                            <input type="text" class="form-control" id="inputP4_12_4" name="P4_12_4" placeholder="P4_12_4" value="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_12_5">P4_12_5</label>
+                            <input type="text" class="form-control" id="inputP4_12_5" name="P4_12_5" placeholder="P4_12_5" value="2">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_12_6">P4_12_6</label>
+                            <input type="text" class="form-control" id="inputP4_12_6" name="P4_12_6" placeholder="P4_12_6" value="2">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_12_7">P4_12_7</label>
+                            <input type="text" class="form-control" id="inputP4_12_7" name="P4_12_7" placeholder="P4_12_7" value="2">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_13_1">P4_13_1</label>
+                            <input type="text" class="form-control" id="inputP4_13_1" name="P4_13_1" placeholder="P4_13_1" value="2.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_13_2">P4_13_2</label>
+                            <input type="text" class="form-control" id="inputP4_13_2" name="P4_13_2" placeholder="P4_13_2" value="2.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_13_3">P4_13_3</label>
+                            <input type="text" class="form-control" id="inputP4_13_3" name="P4_13_3" placeholder="P4_13_3" value="1.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_13_4">P4_13_4</label>
+                            <input type="text" class="form-control" id="inputP4_13_4" name="P4_13_4" placeholder="P4_13_4" value="2.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_13_5">P4_13_5</label>
+                            <input type="text" class="form-control" id="inputP4_13_5" name="P4_13_5" placeholder="P4_13_5" value="2.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_13_6">P4_13_6</label>
+                            <input type="text" class="form-control" id="inputP4_13_6" name="P4_13_6" placeholder="P4_13_6" value="2.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP4_13_7">P4_13_7</label>
+                            <input type="text" class="form-control" id="inputP4_13_7" name="P4_13_7" placeholder="P4_13_7" value="2.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP10_1_1">P10_1_1</label>
+                            <input type="text" class="form-control" id="inputP10_1_1" name="P10_1_1" placeholder="P10_1_1" value="0.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP10_1_2">P10_1_2</label>
+                            <input type="text" class="form-control" id="inputP10_1_2" name="P10_1_2" placeholder="P10_1_2" value="0.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP10_1_3">P10_1_3</label>
+                            <input type="text" class="form-control" id="inputP10_1_3" name="P10_1_3" placeholder="P10_1_3" value="0.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP10_1_4">P10_1_4</label>
+                            <input type="text" class="form-control" id="inputP10_1_4" name="P10_1_4" placeholder="P10_1_4" value="0.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP10_1_5">P10_1_5</label>
+                            <input type="text" class="form-control" id="inputP10_1_5" name="P10_1_5" placeholder="P10_1_5" value="0.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP10_1_6">P10_1_6</label>
+                            <input type="text" class="form-control" id="inputP10_1_6" name="P10_1_6" placeholder="P10_1_6" value="0.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP10_1_7">P10_1_7</label>
+                            <input type="text" class="form-control" id="inputP10_1_7" name="P10_1_7" placeholder="P10_1_7" value="0.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP10_1_8">P10_1_8</label>
+                            <input type="text" class="form-control" id="inputP10_1_8" name="P10_1_8" placeholder="P10_1_8" value="0.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP10_1_9">P10_1_9</label>
+                            <input type="text" class="form-control" id="inputP10_1_9" name="P10_1_9" placeholder="P10_1_9" value="0.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP10_2">P10_2</label>
+                            <input type="text" class="form-control" id="inputP10_2" name="P10_2" placeholder="P10_2, needs to be 1.0" value="1.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP10_3">P10_3</label>
+                            <input type="text" class="form-control" id="inputP10_3" name="P10_3" placeholder="P10_3" value="1.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP10_4_1">P10_4_1</label>
+                            <input type="text" class="form-control" id="inputP10_4_1" name="P10_4_1" placeholder="P10_4_1" value="1.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP10_4_2">P10_4_2</label>
+                            <input type="text" class="form-control" id="inputP10_4_2" name="P10_4_2" placeholder="P10_4_2" value="0.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP10_4_3">P10_4_3</label>
+                            <input type="text" class="form-control" id="inputP10_4_3" name="P10_4_3" placeholder="P10_4_3" value="0.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP10_5_01">P10_5_01</label>
+                            <input type="text" class="form-control" id="inputP10_5_01" name="P10_5_01" placeholder="P10_5_01" value="0.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP10_5_02">P10_5_02</label>
+                            <input type="text" class="form-control" id="inputP10_5_02" name="P10_5_02" placeholder="P10_5_02" value="0.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP10_5_03">P10_5_03</label>
+                            <input type="text" class="form-control" id="inputP10_5_03" name="P10_5_03" placeholder="P10_5_03" value="0.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP10_5_04">P10_5_04</label>
+                            <input type="text" class="form-control" id="inputP10_5_04" name="P10_5_04" placeholder="P10_5_04" value="0.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP10_5_05">P10_5_05</label>
+                            <input type="text" class="form-control" id="inputP10_5_05" name="P10_5_05" placeholder="P10_5_05" value="0.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP10_5_06">P10_5_06</label>
+                            <input type="text" class="form-control" id="inputP10_5_06" name="P10_5_06" placeholder="P10_5_06" value="0.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP10_5_07">P10_5_07</label>
+                            <input type="text" class="form-control" id="inputP10_5_07" name="P10_5_07" placeholder="P10_5_07" value="0.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP10_5_08">P10_5_08</label>
+                            <input type="text" class="form-control" id="inputP10_5_08" name="P10_5_08" placeholder="P10_5_08" value="0.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP10_5_09">P10_5_09</label>
+                            <input type="text" class="form-control" id="inputP10_5_09" name="P10_5_09" placeholder="P10_5_09" value="0.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP10_5_10">P10_5_10</label>
+                            <input type="text" class="form-control" id="inputP10_5_10" name="P10_5_10" placeholder="P10_5_10" value="0.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP10_5_11">P10_5_11</label>
+                            <input type="text" class="form-control" id="inputP10_5_11" name="P10_5_11" placeholder="P10_5_11" value="0.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP10_6ANIO">P10_6ANIO</label>
+                            <input type="text" class="form-control" id="inputP10_6ANIO" name="P10_6ANIO" placeholder="P10_6ANIO" value="2019.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP10_6MES">P10_6MES</label>
+                            <input type="text" class="form-control" id="inputP10_6MES" name="P10_6MES" placeholder="P10_6MES" value="10.0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputP10_7">P10_7</label>
+                            <input type="text" class="form-control" id="inputP10_7" name="P10_7" placeholder="P10_7" value="5.0">
+                        <div class="form-group">
+                            <label for="Target_Question">Target Question</label>
+                            <input type="text" class="form-control" id="inputTarget" name="Target_Question" placeholder="Type a question from P10_8_1 to P10_8_11">
+                        </div>                        
+                        <input type="submit" value="submit" class="btn btn-primary">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <p class="text-left"><a href="/">Return to index</a></p>
+            </div>
+            <div class="col">
+                <p class="text-right"><a href="/dashboard">Tableau Dashboard</a></p>
+            </div>
+        </div>
+
+
+    </body>
+
+</html>
