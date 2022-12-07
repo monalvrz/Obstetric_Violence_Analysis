@@ -49,6 +49,9 @@ def get_ML_dataset(user_entry):
     # Removing women that did not had a pregnancy on the last 5 years
     df_copy = df_copy[df_copy.P10_2 == 1.0].reset_index(drop=True)
 
+    # Set dtype for question P4_10_3_3
+    df_copy['P4_10_3_3'] = df_copy['P4_10_3_3'].astype(object)
+
     # Store the current dtypes to restablish them after getting the user inputs
     original_dtypes = df_copy.dtypes.to_dict()	
     # Convert user inputs to series
@@ -153,6 +156,7 @@ def DataFrame_X_y_split(user_key,source_df, df_X_y_dict = {}):
     df_X_y_dict[user_key]['X'] = df_X
     df_X_y_dict[user_key]['y'] = df_y
     print(f'Received {len(df_X.columns)}', file=sys.stderr)
+    print(f'{df_X.iloc[-1].to_dict()}', file=sys.stderr)
     return df_X_y_dict
 
 def Clustered_NN_Classifier(NN_model, NN_threshold, dict_X, Clustered_NN_Results = {}):
@@ -165,7 +169,7 @@ def Clustered_NN_Classifier(NN_model, NN_threshold, dict_X, Clustered_NN_Results
 
     # Create dictionary to store the split column name groups
     section_features = {}
-    print('Start clustering process', file=sys.stderr)
+    print(f'Start clustering process with {len(X.columns)} features', file=sys.stderr)
     for table in table_sections:
       print(f'Creating cluster for table {table}', file=sys.stderr)
       #Group the encoded columns according to their starting code
