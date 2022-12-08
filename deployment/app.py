@@ -4,8 +4,7 @@ from flask import (Flask,
                     render_template,
                     request,
                     redirect,
-                    url_for,
-                    send_static_file)
+                    url_for)
 from .neural_network import (get_ML_dataset,
                                 DataFrame_X_y_split,
                                 Clustered_NN_Classifier)
