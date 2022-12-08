@@ -10,3 +10,4 @@ Flask-Cors==3.0.8
 Flask-SQLAlchemy==2.5.1
 psycopg2==2.9.3
 psycopg2-binary==2.9.3
+markupsafe==2.0.1
