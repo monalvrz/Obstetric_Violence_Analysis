@@ -39,7 +39,7 @@ NN_threshold_dict = {'P10_8_1': 0.9973000288009644,
 #################################################
 NN_model_dict = {}
 for key in NN_threshold_dict.keys():
-    NN_model_dict[key] = load_model(f'NN_Saved_Models/{key}_model.h5')
+    NN_model_dict[key] = load_model(f'deployment/NN_Saved_Models/{key}_model.h5')
 
 # create route that renders index.html template
 @app.route("/")
