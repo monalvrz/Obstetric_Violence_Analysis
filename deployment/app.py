@@ -2,11 +2,10 @@
 from tensorflow.keras.models import load_model
 from flask import (Flask,
                     render_template,
-                    jsonify,
                     request,
                     redirect,
                     url_for,
-                    session)
+                    send_static_file)
 from .neural_network import (get_ML_dataset,
                                 DataFrame_X_y_split,
                                 Clustered_NN_Classifier)
@@ -47,6 +46,11 @@ for key in NN_threshold_dict.keys():
 @app.route("/")
 def home():
     return render_template("index.html")
+
+# create favicon.ico route
+@app.route('/favicon.ico')
+def favicon():
+    return url_for('static', filename='image/favicon.ico')
 
 # Access the embeded dashboard results
 @app.route("/dashboard")
