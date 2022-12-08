@@ -1,6 +1,6 @@
-/database
-/machine_learning
-/presentation
-/resources
+database/
+machine_learning/
+presentation/
+resources/
 technology.md
 README.md
