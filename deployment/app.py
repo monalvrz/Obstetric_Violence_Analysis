@@ -8,6 +8,7 @@ from flask import (Flask,
 from .neural_network import (get_ML_dataset,
                                 DataFrame_X_y_split,
                                 NN_Classifier)
+import joblib
                                 
 #################################################
 # Flask Setup
@@ -40,6 +41,10 @@ NN_threshold_dict = {'P10_8_1': 0.03970000147819519,
 NN_model_dict = {}
 for key in NN_threshold_dict.keys():
     NN_model_dict[key] = load_model(f'deployment/NN_Saved_Models/{key}_model.h5')
+
+Scaler_dict = {}
+for key in NN_threshold_dict.keys():
+    Scaler_dict[key] = joblib.load(f'{key}_scaler.save')
 
 # create route that renders index.html template
 @app.route("/")
@@ -77,10 +82,14 @@ def send():
 @app.route("/result")
 def ml_results():
     print(f'Received the following target question: {user_inputs["Target_Question"]}')
+    
     key = user_inputs["Target_Question"]
 
     ml_dataset = DataFrame_X_y_split(key, get_ML_dataset(user_inputs))
-    ml_result = NN_Classifier(NN_model_dict[key],NN_threshold_dict[key],ml_dataset[key]['X'])
+
+    ml_result = NN_Classifier(NN_model_dict[key],Scaler_dict[key],
+                            NN_threshold_dict[key],ml_dataset[key]['X'])
+
     return render_template("ml_results.html", user_inputs=user_inputs, NN_result = ml_result)
 
 if __name__ == "__main__":
