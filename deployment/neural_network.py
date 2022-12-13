@@ -95,10 +95,7 @@ def NN_Classifier(NN_model, Saved_scaler,
     X = dict_X.copy()
 
     # Create a scaler instance
-    scaler = Saved_scaler
-
-    # Train the standard scaler using the X_train data
-    X_scaler = scaler.fit(X.values)
+    X_scaler = Saved_scaler
 
     print(f'Scaling {len(X.iloc[-1])} inputs', file=sys.stderr)
 
