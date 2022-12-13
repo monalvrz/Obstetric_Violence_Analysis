@@ -12,13 +12,16 @@ from sklearn.preprocessing import StandardScaler
 #######################################################
 
 def get_ML_dataset(user_entry):	
+
+    print(user_entry)
     # Convert user inputs to series
-    user_row = pd.DataFrame(user_entry)
+    user_row = pd.DataFrame(user_entry,index=[0])
+    print(user_row)
 
     # Drop the Target Question entry since its not relevant for the ML model
     user_row = user_row.drop(columns='Target_Question')
 
-    print(f'These are the user inputs: {user_row.tail(1)}', file=sys.stderr)
+    print(f'These are the user inputs: \n {user_row.tail(1)}', file=sys.stderr)
 
     return user_row
 
@@ -27,12 +30,6 @@ def get_ML_dataset(user_entry):
 ############################################################################
 
 def DataFrame_X_y_split(user_key,source_df, df_X_y_dict = {}):
-
-    # Create target question list
-    question_list = ['P10_8_1','P10_8_2','P10_8_3',
-                     'P10_8_4','P10_8_5','P10_8_6',
-                     'P10_8_7','P10_8_8','P10_8_9',
-                     'P10_8_10','P10_8_11']
     
     # Create the chosen feature list
     feature_list = ['DOMINIO', 'EDAD', 
@@ -42,7 +39,7 @@ def DataFrame_X_y_split(user_key,source_df, df_X_y_dict = {}):
     df = source_df.copy()
     
     # Grab only the target features
-    df = df[feature_list + question_list]
+    df = df[feature_list]
     
     # Chose only the target features from the dataset and set dtype as string
     df[feature_list] = df[feature_list].fillna('b').astype(str)
@@ -50,20 +47,39 @@ def DataFrame_X_y_split(user_key,source_df, df_X_y_dict = {}):
 
     # Enconde the categorical features
     encode_df = pd.get_dummies(df, dtype=float)
+    print(encode_df)
+
+    # The encoded labels that resulted from training the neural network
+    NN_features = ['EDAD', 'DOMINIO_C', 'DOMINIO_R', 'DOMINIO_U',
+                  'P3_8_A1', 'P3_8_A2', 'P3_8_B1', 'P3_8_B2',
+                  'P3_8_C1', 'P3_8_C2', 'P10_2_1.0', 'P10_7_1.0',
+                  'P10_7_10.0', 'P10_7_2.0', 'P10_7_3.0', 'P10_7_4.0',
+                  'P10_7_5.0', 'P10_7_6.0', 'P10_7_7.0', 'P10_7_8.0',
+                  'P10_7_9.0', 'P10_7_b']
     
+    # Get the features which are missing from the user inputs 
+    ## This is because the user input will only create 1 group, while the traning model had encoded groups for the whole dataset
+    for column in encode_df.columns.to_list():
+      NN_features.remove(column)  
+    
+    # Set the missing categorical features to 0.0
+    for column in NN_features:
+      encode_df[column] = 0.0
+
     # Create the dataset for the target question
     target = user_key
 
     # Drop the rows where the target answers are blank
-    df_X = encode_df.loc[(encode_df[target] == 1) | (encode_df[target] == 2)].drop(columns=question_list)
-    df_y = encode_df.loc[(encode_df[target] == 1) | (encode_df[target] == 2),[target]]
+    print(encode_df)
+    df_X = encode_df
 
     # Create nested dictionary for the target question
     df_X_y_dict[target] = {}
 
     # Store the X and y datasets that will be used with the random forest model for the key question
     df_X_y_dict[target]['X'] = df_X
-    df_X_y_dict[target]['y'] = df_y
+
+    print(df_X)
 
     return df_X_y_dict
 
@@ -105,6 +121,6 @@ def NN_Classifier(NN_model, Saved_scaler,
 
     # Return answers to the predicted question
     if binary_predictions == 0:
-      return 'Yes'
+      return f'Yes'
     else:
       return 'No'
