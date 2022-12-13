@@ -44,7 +44,7 @@ for key in NN_threshold_dict.keys():
 
 Scaler_dict = {}
 for key in NN_threshold_dict.keys():
-    Scaler_dict[key] = joblib.load(f'{key}_scaler.save')
+    Scaler_dict[key] = joblib.load(f'deployment/Saved_Scalers/{key}_scaler.save')
 
 # create route that renders index.html template
 @app.route("/")
