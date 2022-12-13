@@ -11,64 +11,16 @@ from sklearn.preprocessing import StandardScaler
 # Function to get the data stored in the RDS database #
 #######################################################
 
-def get_ML_dataset(user_entry):
-
-    print('Connecting to AWS RDS', file=sys.stderr)
-
-    # Create engine to connect to database
-    engine = sql.create_engine(
-      f'postgresql://postgres:bootcamp-project@obstetric-violence.clstnlifxcx7.us-west-2.rds.amazonaws.com:5432/ENDIREH_2021')
-
-    # Get list of table names
-    sql.inspect(engine).get_table_names()
-
-    print('Reading Database', file=sys.stderr)
-
-    # Read the obstetric_violence table and show the results
-    RDS_df = pd.read_sql_table(
-      'obstetric_violence', con=engine)
-
-    # Creating a copy of the database to choose the features we will use to analyse
-    df_copy = RDS_df.copy()
-
-    print('Removing irrelevant columns', file=sys.stderr)
-
-    # Remove columns that had data that wasn't usefull like ids, sampling information and table structure
-    df_copy = df_copy.drop(columns=['ID_VIV', 'ID_PER' ,'UPM', 'VIV_SEL', 
-                                    'HOGAR', 'N_REN', 'CVE_ENT', 'CVE_MUN', 
-                                    'COD_RES', 'EST_DIS', 'UPM_DIS', 'ESTRATO', 
-                                    'NOMBRE', 'SEXO', 'COD_M15', 'CODIGO', 'REN_MUJ_EL', 
-                                    'REN_INF_AD', 'N_REN_ESP','T_INSTRUM', 'FAC_VIV', 
-                                    'FAC_MUJ', 'PAREN', 'GRA', 'NOM_MUN', 'P4_4_CVE'])
-
-    # Removing women that did not had a pregnancy on the last 5 years
-    df_copy = df_copy[df_copy.P10_2 == 1.0].reset_index(drop=True)
-
-    # Set dtype for question P4_10_3_3
-    df_copy['P4_10_3_3'] = df_copy['P4_10_3_3'].astype(object)
-
-    # Store the current dtypes to restablish them after getting the user inputs
-    original_dtypes = df_copy.dtypes.to_dict()	
-
+def get_ML_dataset(user_entry):	
     # Convert user inputs to series
-    user_row = pd.Series(user_entry)
+    user_row = pd.DataFrame(user_entry)
 
     # Drop the Target Question entry since its not relevant for the ML model
-    user_row = user_row.drop('Target_Question')
+    user_row = user_row.drop(columns='Target_Question')
 
-    print(f'These are the user input dtypes: {user_row}', file=sys.stderr)
+    print(f'These are the user inputs: {user_row.tail(1)}', file=sys.stderr)
 
-    # Add the user inputs as a new row to the dataframe
-    df_copy = pd.concat([df_copy,user_row.to_frame().T],ignore_index=True)
-
-    # Restablish the dataframe dtypes
-    df_copy= df_copy.astype(original_dtypes)
-
-    print(f'These are the user inputs: {df_copy.tail(1)}', file=sys.stderr)
-
-    for col in df_copy.columns:
-      print(f'{col} {df_copy[col].dtype}') 
-    return df_copy
+    return user_row
 
 ############################################################################
 # Function to split the data in X and y dataframes for the target question #
@@ -120,13 +72,14 @@ def DataFrame_X_y_split(user_key,source_df, df_X_y_dict = {}):
 # Function to predict the result using the trained model #
 ##########################################################
 
-def NN_Classifier(NN_model, NN_threshold, dict_X, NN_Results = {}):
+def NN_Classifier(NN_model, Saved_scaler, 
+                  NN_threshold, dict_X, NN_Results = {}):
 
     # Create a copy of the X and y datasets to prevent modifications in the original dataset
     X = dict_X.copy()
 
     # Create a scaler instance
-    scaler = StandardScaler()
+    scaler = Saved_scaler
 
     # Train the standard scaler using the X_train data
     X_scaler = scaler.fit(X.values)
