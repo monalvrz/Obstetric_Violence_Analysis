@@ -1,106 +1,105 @@
 ,P10_8_1,P10_8_2,P10_8_3,P10_8_4,P10_8_5,P10_8_6,P10_8_7,P10_8_8,P10_8_9,P10_8_10,P10_8_11
-Model,<keras.engine.sequential.Sequential object at 0x7f15634be220>,<keras.engine.sequential.Sequential object at 0x7f156599b160>,<keras.engine.sequential.Sequential object at 0x7f156477fdc0>,<keras.engine.sequential.Sequential object at 0x7f155a548d90>,<keras.engine.sequential.Sequential object at 0x7f156540dfd0>,<keras.engine.sequential.Sequential object at 0x7f1564a3dc40>,<keras.engine.sequential.Sequential object at 0x7f1563c1a700>,<keras.engine.sequential.Sequential object at 0x7f1562c87580>,<keras.engine.sequential.Sequential object at 0x7f1562c264f0>,<keras.engine.sequential.Sequential object at 0x7f1561ef53a0>,<keras.engine.sequential.Sequential object at 0x7f15619235b0>
-Threshold,0.9463,0.9694,0.9999,0.9964,0.9954,0.9918,0.9961,0.9995,0.9989,0.9959,0.9998
-Predictions,[1 0 0 ... 1 1 1],[0 1 1 ... 0 0 0],[1 0 0 ... 0 1 0],[1 0 0 ... 1 1 0],[0 1 0 ... 0 1 0],[1 0 0 ... 0 1 0],[0 1 0 ... 1 1 1],[1 1 0 ... 0 0 0],[0 0 0 ... 1 1 1],[0 0 1 ... 0 1 0],[0 0 1 ... 1 1 1]
-Confusion Matrix,"[[ 168  179]
- [1810 2674]]","[[ 284  220]
- [1773 2554]]","[[  32   16]
- [2643 2140]]","[[ 184  118]
- [2009 2520]]","[[ 274  157]
- [2146 2254]]","[[ 103   84]
- [1721 2923]]","[[ 252  138]
- [2083 2358]]","[[ 118   69]
- [2446 2198]]","[[ 321  144]
- [2149 2217]]","[[  41   20]
- [2524 2246]]","[[  63   47]
- [2028 2693]]"
-Accuracy Score,0.7298696041107178,0.7155868411064148,0.9445249438285828,0.7642310261726379,0.7296625971794128,0.8217760324478149,0.7373214364051819,0.8207410573959351,0.7410473823547363,0.872076153755188,0.9149244427680969
+Threshold,0.0397,0.0349,0.0105,0.044,0.0406,0.0436,0.0383,0.0548,0.0341,0.0281,0.037
+Predictions,[0 0 0 ... 1 1 1],[1 1 1 ... 0 0 0],[0 1 0 ... 1 1 1],[0 0 1 ... 1 1 0],[1 0 0 ... 1 1 0],[1 1 1 ... 0 1 1],[1 1 0 ... 1 0 1],[0 0 0 ... 0 0 0],[0 1 0 ... 1 1 1],[0 0 1 ... 0 0 0],[0 0 0 ... 0 0 0]
+Confusion Matrix,"[[ 216  131]
+ [1952 2532]]","[[ 332  172]
+ [2110 2217]]","[[  22   26]
+ [1749 3034]]","[[ 204   98]
+ [2093 2436]]","[[ 291  140]
+ [2049 2351]]","[[ 108   79]
+ [1867 2777]]","[[ 245  145]
+ [2097 2344]]","[[ 178    9]
+ [4429  215]]","[[ 269  196]
+ [1846 2520]]","[[  56    5]
+ [4009  761]]","[[ 103    7]
+ [4416  305]]"
+Accuracy Score,0.194576695561409,0.2233491986989975,0.5017594695091248,0.13164976239204407,0.18464085459709167,0.3529289960861206,0.19250673055648804,0.07927965372800827,0.24508383870124817,0.16332022845745087,0.08197060972452164
 Classification Report,"              precision    recall  f1-score   support
 
-     Class 1       0.08      0.48      0.14       347
-     Class 2       0.94      0.60      0.73      4484
+     Class 1       0.10      0.62      0.17       347
+     Class 2       0.95      0.56      0.71      4484
 
-    accuracy                           0.59      4831
-   macro avg       0.51      0.54      0.44      4831
-weighted avg       0.88      0.59      0.69      4831
+    accuracy                           0.57      4831
+   macro avg       0.53      0.59      0.44      4831
+weighted avg       0.89      0.57      0.67      4831
 ","              precision    recall  f1-score   support
 
-     Class 1       0.14      0.56      0.22       504
-     Class 2       0.92      0.59      0.72      4327
+     Class 1       0.14      0.66      0.23       504
+     Class 2       0.93      0.51      0.66      4327
 
-    accuracy                           0.59      4831
-   macro avg       0.53      0.58      0.47      4831
-weighted avg       0.84      0.59      0.67      4831
+    accuracy                           0.53      4831
+   macro avg       0.53      0.59      0.44      4831
+weighted avg       0.85      0.53      0.61      4831
 ","              precision    recall  f1-score   support
 
-     Class 1       0.01      0.67      0.02        48
-     Class 2       0.99      0.45      0.62      4783
-
-    accuracy                           0.45      4831
-   macro avg       0.50      0.56      0.32      4831
-weighted avg       0.98      0.45      0.61      4831
-","              precision    recall  f1-score   support
-
-     Class 1       0.08      0.61      0.15       302
-     Class 2       0.96      0.56      0.70      4529
-
-    accuracy                           0.56      4831
-   macro avg       0.52      0.58      0.43      4831
-weighted avg       0.90      0.56      0.67      4831
-","              precision    recall  f1-score   support
-
-     Class 1       0.11      0.64      0.19       431
-     Class 2       0.93      0.51      0.66      4400
-
-    accuracy                           0.52      4831
-   macro avg       0.52      0.57      0.43      4831
-weighted avg       0.86      0.52      0.62      4831
-","              precision    recall  f1-score   support
-
-     Class 1       0.06      0.55      0.10       187
-     Class 2       0.97      0.63      0.76      4644
+     Class 1       0.01      0.46      0.02        48
+     Class 2       0.99      0.63      0.77      4783
 
     accuracy                           0.63      4831
-   macro avg       0.51      0.59      0.43      4831
-weighted avg       0.94      0.63      0.74      4831
+   macro avg       0.50      0.55      0.40      4831
+weighted avg       0.98      0.63      0.77      4831
 ","              precision    recall  f1-score   support
 
-     Class 1       0.11      0.65      0.18       390
+     Class 1       0.09      0.68      0.16       302
+     Class 2       0.96      0.54      0.69      4529
+
+    accuracy                           0.55      4831
+   macro avg       0.53      0.61      0.42      4831
+weighted avg       0.91      0.55      0.66      4831
+","              precision    recall  f1-score   support
+
+     Class 1       0.12      0.68      0.21       431
+     Class 2       0.94      0.53      0.68      4400
+
+    accuracy                           0.55      4831
+   macro avg       0.53      0.60      0.45      4831
+weighted avg       0.87      0.55      0.64      4831
+","              precision    recall  f1-score   support
+
+     Class 1       0.05      0.58      0.10       187
+     Class 2       0.97      0.60      0.74      4644
+
+    accuracy                           0.60      4831
+   macro avg       0.51      0.59      0.42      4831
+weighted avg       0.94      0.60      0.72      4831
+","              precision    recall  f1-score   support
+
+     Class 1       0.10      0.63      0.18       390
      Class 2       0.94      0.53      0.68      4441
 
     accuracy                           0.54      4831
-   macro avg       0.53      0.59      0.43      4831
-weighted avg       0.88      0.54      0.64      4831
+   macro avg       0.52      0.58      0.43      4831
+weighted avg       0.87      0.54      0.64      4831
 ","              precision    recall  f1-score   support
 
-     Class 1       0.05      0.63      0.09       187
-     Class 2       0.97      0.47      0.64      4644
+     Class 1       0.04      0.95      0.07       187
+     Class 2       0.96      0.05      0.09      4644
 
-    accuracy                           0.48      4831
-   macro avg       0.51      0.55      0.36      4831
-weighted avg       0.93      0.48      0.61      4831
+    accuracy                           0.08      4831
+   macro avg       0.50      0.50      0.08      4831
+weighted avg       0.92      0.08      0.09      4831
 ","              precision    recall  f1-score   support
 
-     Class 1       0.13      0.69      0.22       465
-     Class 2       0.94      0.51      0.66      4366
+     Class 1       0.13      0.58      0.21       465
+     Class 2       0.93      0.58      0.71      4366
 
-    accuracy                           0.53      4831
-   macro avg       0.53      0.60      0.44      4831
-weighted avg       0.86      0.53      0.62      4831
+    accuracy                           0.58      4831
+   macro avg       0.53      0.58      0.46      4831
+weighted avg       0.85      0.58      0.66      4831
 ","              precision    recall  f1-score   support
 
-     Class 1       0.02      0.67      0.03        61
-     Class 2       0.99      0.47      0.64      4770
+     Class 1       0.01      0.92      0.03        61
+     Class 2       0.99      0.16      0.27      4770
 
-    accuracy                           0.47      4831
-   macro avg       0.50      0.57      0.33      4831
-weighted avg       0.98      0.47      0.63      4831
+    accuracy                           0.17      4831
+   macro avg       0.50      0.54      0.15      4831
+weighted avg       0.98      0.17      0.27      4831
 ","              precision    recall  f1-score   support
 
-     Class 1       0.03      0.57      0.06       110
-     Class 2       0.98      0.57      0.72      4721
+     Class 1       0.02      0.94      0.04       110
+     Class 2       0.98      0.06      0.12      4721
 
-    accuracy                           0.57      4831
-   macro avg       0.51      0.57      0.39      4831
-weighted avg       0.96      0.57      0.71      4831
+    accuracy                           0.08      4831
+   macro avg       0.50      0.50      0.08      4831
+weighted avg       0.96      0.08      0.12      4831
 "
